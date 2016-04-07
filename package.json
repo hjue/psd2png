@@ -1,0 +1,22 @@
+{
+  "name": "psd2png",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hjue/psd2png.git"
+  },
+  "author": "Jason Hao <haojue@gmail.com> (http://hjue.me/)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hjue/psd2png/issues"
+  },
+  "homepage": "https://github.com/hjue/psd2png#readme",
+  "dependencies": {
+    "psd": "^3.1.0"
+  }
+}
