@@ -20,13 +20,17 @@ PSD.open(file).then(function (psd) {
   var type, fonts = [];
   psd.tree().descendants().forEach(function (node) {
     if (node.isGroup()) return true;
+
     node.saveAsPng("./output/" + node.name + ".png").catch(function (err) {
       console.log(err.stack);
     });
+    console.log(" export ./output/" + node.name + ".png")
     type = node.get('typeTool');
     if (!type) return;
     if(type.textValue.length>6){
-      text += type.textValue + "\n";
+      text_seg = ['font:',type.fonts(),'size:', type.sizes() ,'color:',type.colors(),'value:',type.textValue].join(' ');
+      // console.log(text_seg);
+      text += text_seg + "\n";
     }
   });
   fs.writeFileSync("./output/text.txt",text)
